@@ -1,0 +1,29 @@
+.recipe {
+    padding: 1.5rem;
+    border-bottom: 2px solid #000;
+}
+.recipe__header {
+    display: flex;
+    justify-content: space-between;
+}
+.recipe__text-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: .25rem;
+}
+.recipe__text-column {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.recipe__text-column .recipe__instructions {
+    font-size: clamp(1rem, 1.35vw, 2.15rem);
+    font-weight: 400;
+    color: rgb(70, 70, 70);
+    margin-left: .6rem;
+    white-space: pre-wrap;
+}
+.btn {
+    margin-right: .5rem;
+}

@@ -1,0 +1,10 @@
+.recipe-list {
+    width: 50%;
+    border-right: 1px solid #000;
+}
+.recipe-list__add-recipe-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}

@@ -1,0 +1,52 @@
+@import 'RecipeList.css';
+@import 'Recipe.css';
+@import 'IngredientList.css';
+@import 'RecipeEdit.css';
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+h1, p {
+    color: rgb(25, 25, 25);
+}
+h1 {
+    font-size: clamp(1.85rem, 2.35vw, 3rem);
+    font-weight: 700;
+}
+p {
+    font-size: clamp(1.15rem, 1.55vw, 2.35rem);
+    font-weight: 600;
+}
+span {
+    font-size: clamp(1rem, 1.35vw, 2.15rem);
+    font-weight: 400;
+    color: rgb(70, 70, 70);
+}
+.main {
+    display: flex;
+    flex-direction: row;
+}
+.btn {
+    border: 0;
+    border-radius: 2px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    font-weight: bold;
+}
+.btn--primary {
+    background: rgb(0, 153, 255);
+}
+.btn--primary:hover, .btn--primary:focus {
+    background: rgb(0, 119, 255);
+}
+.btn--danger {
+    background: rgb(255, 41, 41);
+}
+.btn--danger:hover, .btn--danger:focus {
+    background: rgb(160, 8, 8);
+}
