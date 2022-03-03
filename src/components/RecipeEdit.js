@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import RecipeIngredientEdit from './RecipeIngredientEdit'
 import { RecipeContext } from './App'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 export default function RecipeEdit({ recipe }) {
     const { handleRecipeChange, handleRecipeSelect } = useContext(RecipeContext) 
