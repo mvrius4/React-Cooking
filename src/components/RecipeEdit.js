@@ -51,6 +51,11 @@ export default function RecipeEdit({ recipe }) {
                     onChange={e => handleChange({ servings: parseInt(e.target.value) || ''})}
                     value={recipe.servings}
                 />
+                <label htmlFor="creator">Creator</label>
+                <input name="creator" type="text" id="creator" 
+                    onChange={e => handleChange({ creator: e.target.value})}
+                    value={recipe.creator}
+                />
                 <label htmlFor="instructions">Instructions</label>
                 <textarea name="instructions" id="instructions" 
                     onChange={e => handleChange({ instructions: e.target.value})}

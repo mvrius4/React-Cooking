@@ -9,6 +9,7 @@ export default function Recipe(props) {
         name,
         cookTime,
         servings,
+        creator,
         instructions,
         ingredients,
     } = props;
@@ -29,6 +30,10 @@ export default function Recipe(props) {
             <div className="recipe__text-row">
                 <p>Servings: </p>
                 <span>{servings}</span>
+            </div>
+            <div className="recipe__text-row">
+                <p>Creator: </p>
+                <span>{creator}</span>
             </div>
             <div className="recipe__text-column">
                 <p>Instructions: </p>

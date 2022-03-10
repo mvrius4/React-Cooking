@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from './RecipeList';
-import RecipeEdit from './RecipeEdit'
+import RecipeEdit from './RecipeEdit';
 import '../css/App.css';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -10,6 +10,7 @@ const LOCAL_STORAGE_KEY = "cookingWithReact.recipes"
 function App() {
   const [selectedRecipeId, setSelectedRecipeId] = useState();
   const [recipes, setRecipes] = useState(sampleRecipes);
+  const [searchTerm, setSearchTerm] = useState("");
   const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId);
   const recipeContextValues = {
     handleRecipeAdd,
@@ -37,6 +38,7 @@ function App() {
       name: '',
       cookTime: '',
       servings: 0,
+      creator: '',
       instructions: '',
       ingredients: [
         { id: uuidv4(), name: '', amount: '' }
@@ -61,13 +63,13 @@ function App() {
   }
 
   return (
-    <div className="main">
       <RecipeContext.Provider value={recipeContextValues}>
-        <RecipeList recipes={recipes} />
-        {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
+        <input type="search" onChange={e => setSearchTerm(e.target.value.toLowerCase())} />
+        <div className="main">
+          <RecipeList recipes={recipes.filter(r => r.name.toLowerCase().includes(searchTerm))} />
+          {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
+        </div>
       </RecipeContext.Provider>
-    </div>
-    
   );
 }
 
@@ -77,6 +79,7 @@ const sampleRecipes = [
     name: 'Plain Chicken',
     cookTime: '1:30',
     servings: 3,
+    creator: 'Marius',
     instructions: "1. Cook the chicken.\n2. Eat the chicken.",
     ingredients:
     [
@@ -97,6 +100,7 @@ const sampleRecipes = [
     name: 'Plain Pork',
     cookTime: '1:45',
     servings: 5,
+    creator: 'Marius',
     instructions: "1. Cook the pork.\n2. Eat the pork.",
     ingredients:
     [
